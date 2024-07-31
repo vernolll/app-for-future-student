@@ -13,7 +13,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QFileDialog>
-#include "add_file.h"
+#include "include/add_file.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,8 +28,6 @@ public:
     ~MainWindow();
 
 private slots:
-
-    void on_pushButton_clicked();
 
     void on_pushButton_next_clicked();
 

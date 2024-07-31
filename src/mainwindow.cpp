@@ -42,41 +42,7 @@ MainWindow::~MainWindow()
 
 
 
-void MainWindow::on_pushButton_conf_clicked()
-{
-    QString name = ui->lineEdit_name->text();
-    QString sername = ui->lineEdit_sername->text();
-    QString otche = ui->lineEdit_otche->text();
-    QString phone = ui->lineEdit_phone->text();
-    QString passport = ui->lineEdit_passport->text();
 
-
-    QFile file("info.txt");
-
-    if (!file.exists()) {
-        qDebug() << "File does not exist.";
-        return;
-    }
-
-    if (file.open(QIODevice::Append | QIODevice::Text)) {
-        QTextStream out(&file);
-        out << name << "\n";
-        out << sername << "\n";
-        out << otche << "\n";
-        out << phone << "\n";
-        out << passport << "\n";
-        file.close();
-    }
-
-    else
-    {
-        qDebug() << "Failed to open the file for writing.";
-    }
-
-    QMessageBox::information(this, "Успех!", "Вы успешно подали заявление на поступление.");
-
-    this->close();
-}
 
 
 

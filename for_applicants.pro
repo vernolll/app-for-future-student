@@ -17,13 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/add_file.cpp \
-    src/autoriz_and_regist.cpp \
-    src/bachelor.cpp \
-    src/general.cpp \
     src/main.cpp \
-    src/mainwindow.cpp \
-    src/master.cpp \
-    src/navigation.cpp
+    src/mainwindow.cpp
 
 HEADERS += \
     include/add_file.h \
@@ -34,7 +29,12 @@ FORMS += \
     ui/add_file.ui \
     ui/mainwindow.ui
 
+RESOURCES += res.qrc
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc

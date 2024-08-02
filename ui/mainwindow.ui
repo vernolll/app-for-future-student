@@ -113,7 +113,7 @@
      <widget class="QLabel" name="label_pic0">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>70</x>
         <y>120</y>
         <width>340</width>
         <height>340</height>
@@ -121,6 +121,12 @@
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../res.qrc">:/img/res/label.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QWidget" name="layoutWidget">
@@ -210,6 +216,12 @@
       <property name="text">
        <string/>
       </property>
+      <property name="pixmap">
+       <pixmap resource="../res.qrc">:/img/res/university.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
@@ -256,13 +268,19 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>80</y>
+        <y>60</y>
         <width>450</width>
         <height>450</height>
        </rect>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../res.qrc">:/img/res/sport.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
@@ -768,6 +786,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -13,7 +13,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QFileDialog>
-#include "include/add_file.h"
+#include "add_file.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

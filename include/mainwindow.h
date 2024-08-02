@@ -14,10 +14,13 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include "add_file.h"
+#include "include/authorization.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+class Authorization;
 
 class MainWindow : public QMainWindow
 {
@@ -53,20 +56,20 @@ private slots:
 
     void on_comboBox_spec_2_currentIndexChanged(int index);
 
-
     void on_pushButton_choose_clicked();
+
+    void on_pushButton_add_photo_clicked();
+
+signals:
+
+    void on_pushButton_autoriz_clicked();
 
     void on_pushButton_registr_clicked();
 
     void on_pushButton_registr_2_clicked();
 
-    void on_pushButton_add_photo_clicked();
-
-    void on_pushButton_autoriz_clicked();
-
 private:
     Ui::MainWindow *ui;
-    QSqlDatabase db;
     QSqlDatabase db1;
     QSqlDatabase db2;
     QSqlQuery *query;
@@ -80,9 +83,12 @@ private:
     int row;
     bool choosed;
     bool specialitet;
+
+    QStackedWidget *stackedWidget;
+    Authorization *authorization;
 };
 
-bool connectDatabase();
+//bool connectDatabase();
 bool connectDatabase1();
 
 #endif // MAINWINDOW_H

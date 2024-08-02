@@ -216,7 +216,9 @@ public:
         page_authorization->setObjectName(QString::fromUtf8("page_authorization"));
         label_pic0 = new QLabel(page_authorization);
         label_pic0->setObjectName(QString::fromUtf8("label_pic0"));
-        label_pic0->setGeometry(QRect(30, 120, 340, 340));
+        label_pic0->setGeometry(QRect(70, 120, 340, 340));
+        label_pic0->setPixmap(QPixmap(QString::fromUtf8(":/img/res/label.png")));
+        label_pic0->setScaledContents(true);
         layoutWidget1 = new QWidget(page_authorization);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
         layoutWidget1->setGeometry(QRect(450, 210, 226, 171));
@@ -285,6 +287,8 @@ public:
         label_pic1 = new QLabel(page_the_uni);
         label_pic1->setObjectName(QString::fromUtf8("label_pic1"));
         label_pic1->setGeometry(QRect(50, 100, 380, 380));
+        label_pic1->setPixmap(QPixmap(QString::fromUtf8(":/img/res/university.jpg")));
+        label_pic1->setScaledContents(true);
         label_4 = new QLabel(page_the_uni);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(100, 0, 561, 61));
@@ -299,7 +303,9 @@ public:
         page_sport->setObjectName(QString::fromUtf8("page_sport"));
         label_pic2 = new QLabel(page_sport);
         label_pic2->setObjectName(QString::fromUtf8("label_pic2"));
-        label_pic2->setGeometry(QRect(20, 80, 450, 450));
+        label_pic2->setGeometry(QRect(20, 60, 450, 450));
+        label_pic2->setPixmap(QPixmap(QString::fromUtf8(":/img/res/sport.jpg")));
+        label_pic2->setScaledContents(true);
         label_6 = new QLabel(page_sport);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(320, 0, 91, 41));

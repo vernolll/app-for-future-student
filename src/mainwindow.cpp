@@ -9,15 +9,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("App for applicants");
 
-    connectDatabase();
-    query = new QSqlQuery(db);
-    query->prepare("CREATE TABLE IF NOT EXISTS Users (username TEXT PRIMARY KEY, password TEXT)");
+    stackedWidget = ui->stackedWidget;
+    authorization = new Authorization(ui);
+
+    connect(this, SIGNAL(on_pushButton_autoriz_clicked()), authorization, SLOT(on_pushButton_autoriz_clicked()));
+    connect(this, SIGNAL(on_pushButton_registr_clicked()), authorization, SLOT(on_pushButton_registr_clicked()));
+    connect(this, SIGNAL(on_pushButton_registr_2_clicked()), authorization, SLOT(on_pushButton_registr_2_clicked()));
 
     QPixmap pix(":img/res/label.png");
     ui->label_pic0->setPixmap(pix.scaled(340, 340));
-    QPixmap pix1("res/img/university.jpg");
+    QPixmap pix1(":img/res/university.jpg");
     ui->label_pic1->setPixmap(pix1.scaled(600, 380));
-    QPixmap pix2("res/img/sport.jpg");
+    QPixmap pix2(":img/res/sport.jpg");
     ui->label_pic2->setPixmap(pix2.scaled(700, 450));
 
 
@@ -32,46 +35,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
-bool connectDatabase()
-{
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE"); // Replace "QSQLITE" with your DB driver
-    db.setDatabaseName("users.db"); // Path to your database
-
-    if (!db.open()) {
-        qDebug() << "Error: Unable to open database" << db.lastError().text();
-        return false;
-    }
-
-    qDebug() << "Database connected successfully.";
-    return true;
-}
-
-
-void MainWindow::on_pushButton_autoriz_clicked()
-{
-    QString username = ui->user_name->text();
-    QString password = ui->pass_word->text();
-
-    query->prepare("SELECT * FROM Users WHERE username = :username AND password = :password");
-    query->bindValue(":username", username);
-    query->bindValue(":password", password);
-    query->exec();
-
-    if (query->next())
-    {
-        qDebug() << "Authentication successful";
-        ui->stackedWidget->setCurrentWidget(ui->page_the_uni);
-        db.close();
-    }
-    else
-    {
-        qDebug() << "Authentication failed";
-        QMessageBox::critical(this, "Ошибка", "Неверные данные.");
-    }
-
-}
 
 
 void MainWindow::on_pushButton_2_clicked()
@@ -117,68 +80,13 @@ void MainWindow::on_pushButton_2_clicked()
 }
 
 
-void MainWindow::on_pushButton_registr_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->page_registration);
-}
 
 
-bool isPasswordStrong(const QString &password) {
-    // Check length
-    if (password.length() < 8) {
-        return false; // Minimum length
-    }
-
-    // Check for upper case, lower case, digit, and special character
-    bool hasUpper = false;
-    bool hasLower = false;
-    bool hasDigit = false;
-    bool hasSpecial = false;
-
-    for (const QChar &c : password) {
-        if (c.isUpper()) {
-            hasUpper = true;
-        } else if (c.isLower()) {
-            hasLower = true;
-        } else if (c.isDigit()) {
-            hasDigit = true;
-        } else if (!c.isSpace() && !c.isLetterOrNumber()) {
-            hasSpecial = true;
-        }
-    }
-
-    return hasUpper && hasLower && hasDigit && hasSpecial;
-}
 
 
-void MainWindow::on_pushButton_registr_2_clicked()
-{
-    if(ui->checkBox_agree->isChecked() && !ui->lineEdit_login->text().isEmpty() && !ui->lineEdit_password->text().isEmpty())
-    {
-        QString login = ui->lineEdit_login->text();
-        QString password = ui->lineEdit_password->text();
 
-        if (!isPasswordStrong(password))
-        {
-            QMessageBox::warning(this, "Ненадежный пароль", "Пароль должен содержать не менее 8 символов и состоять из прописных и строчных букв, цифр и специальных символов.");
-            return;
-        }
 
-        query->prepare("INSERT INTO Users (username, password) VALUES (:log, :pas)");
-        query->bindValue(":log", login);
-        query->bindValue(":pas", password);
 
-        if (!query->exec())
-        {
-            qDebug() << "Error executing query:" << query->lastError().text();
-        }
-        else
-        {
-            qDebug() << "User registered successfully!";
-            ui->stackedWidget->setCurrentWidget(ui->page_authorization);
-        }
-    }
-}
 
 
 

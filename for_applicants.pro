@@ -18,12 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/add_file.cpp \
     src/main.cpp \
-    src/mainwindow.cpp
+    src/mainwindow.cpp \
+    src/authorization.cpp
 
 HEADERS += \
     include/add_file.h \
     include/mainwindow.h \
-    include/mainwindow.h
+    include/authorization.h
 
 FORMS += \
     ui/add_file.ui \

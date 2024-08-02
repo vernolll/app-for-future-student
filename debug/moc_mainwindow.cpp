@@ -33,29 +33,32 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 26), // "on_pushButton_next_clicked"
-QT_MOC_LITERAL(2, 38, 0), // ""
-QT_MOC_LITERAL(3, 39, 26), // "on_pushButton_back_clicked"
-QT_MOC_LITERAL(4, 66, 28), // "on_pushButton_next_2_clicked"
-QT_MOC_LITERAL(5, 95, 25), // "on_pushButton_yes_clicked"
-QT_MOC_LITERAL(6, 121, 24), // "on_pushButton_no_clicked"
-QT_MOC_LITERAL(7, 146, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(8, 170, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(9, 194, 16), // "connectDatabase1"
-QT_MOC_LITERAL(10, 211, 26), // "on_pushButton_conf_clicked"
-QT_MOC_LITERAL(11, 238, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(12, 262, 36), // "on_comboBox_spec_currentIndex..."
-QT_MOC_LITERAL(13, 299, 5), // "index"
-QT_MOC_LITERAL(14, 305, 38), // "on_comboBox_spec_2_currentInd..."
-QT_MOC_LITERAL(15, 344, 28), // "on_pushButton_choose_clicked"
-QT_MOC_LITERAL(16, 373, 29), // "on_pushButton_registr_clicked"
-QT_MOC_LITERAL(17, 403, 31), // "on_pushButton_registr_2_clicked"
-QT_MOC_LITERAL(18, 435, 31), // "on_pushButton_add_photo_clicked"
-QT_MOC_LITERAL(19, 467, 29) // "on_pushButton_autoriz_clicked"
+QT_MOC_LITERAL(1, 11, 29), // "on_pushButton_autoriz_clicked"
+QT_MOC_LITERAL(2, 41, 0), // ""
+QT_MOC_LITERAL(3, 42, 29), // "on_pushButton_registr_clicked"
+QT_MOC_LITERAL(4, 72, 31), // "on_pushButton_registr_2_clicked"
+QT_MOC_LITERAL(5, 104, 26), // "on_pushButton_next_clicked"
+QT_MOC_LITERAL(6, 131, 26), // "on_pushButton_back_clicked"
+QT_MOC_LITERAL(7, 158, 28), // "on_pushButton_next_2_clicked"
+QT_MOC_LITERAL(8, 187, 25), // "on_pushButton_yes_clicked"
+QT_MOC_LITERAL(9, 213, 24), // "on_pushButton_no_clicked"
+QT_MOC_LITERAL(10, 238, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(11, 262, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(12, 286, 16), // "connectDatabase1"
+QT_MOC_LITERAL(13, 303, 26), // "on_pushButton_conf_clicked"
+QT_MOC_LITERAL(14, 330, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(15, 354, 36), // "on_comboBox_spec_currentIndex..."
+QT_MOC_LITERAL(16, 391, 5), // "index"
+QT_MOC_LITERAL(17, 397, 38), // "on_comboBox_spec_2_currentInd..."
+QT_MOC_LITERAL(18, 436, 28), // "on_pushButton_choose_clicked"
+QT_MOC_LITERAL(19, 465, 31) // "on_pushButton_add_photo_clicked"
 
     },
-    "MainWindow\0on_pushButton_next_clicked\0"
-    "\0on_pushButton_back_clicked\0"
+    "MainWindow\0on_pushButton_autoriz_clicked\0"
+    "\0on_pushButton_registr_clicked\0"
+    "on_pushButton_registr_2_clicked\0"
+    "on_pushButton_next_clicked\0"
+    "on_pushButton_back_clicked\0"
     "on_pushButton_next_2_clicked\0"
     "on_pushButton_yes_clicked\0"
     "on_pushButton_no_clicked\0"
@@ -65,10 +68,7 @@ QT_MOC_LITERAL(19, 467, 29) // "on_pushButton_autoriz_clicked"
     "on_comboBox_spec_currentIndexChanged\0"
     "index\0on_comboBox_spec_2_currentIndexChanged\0"
     "on_pushButton_choose_clicked\0"
-    "on_pushButton_registr_clicked\0"
-    "on_pushButton_registr_2_clicked\0"
-    "on_pushButton_add_photo_clicked\0"
-    "on_pushButton_autoriz_clicked"
+    "on_pushButton_add_photo_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -83,12 +83,14 @@ static const uint qt_meta_data_MainWindow[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       3,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    0,   99,    2, 0x06 /* Public */,
+       3,    0,  100,    2, 0x06 /* Public */,
+       4,    0,  101,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   99,    2, 0x08 /* Private */,
-       3,    0,  100,    2, 0x08 /* Private */,
-       4,    0,  101,    2, 0x08 /* Private */,
        5,    0,  102,    2, 0x08 /* Private */,
        6,    0,  103,    2, 0x08 /* Private */,
        7,    0,  104,    2, 0x08 /* Private */,
@@ -96,13 +98,18 @@ static const uint qt_meta_data_MainWindow[] = {
        9,    0,  106,    2, 0x08 /* Private */,
       10,    0,  107,    2, 0x08 /* Private */,
       11,    0,  108,    2, 0x08 /* Private */,
-      12,    1,  109,    2, 0x08 /* Private */,
-      14,    1,  112,    2, 0x08 /* Private */,
-      15,    0,  115,    2, 0x08 /* Private */,
-      16,    0,  116,    2, 0x08 /* Private */,
-      17,    0,  117,    2, 0x08 /* Private */,
+      12,    0,  109,    2, 0x08 /* Private */,
+      13,    0,  110,    2, 0x08 /* Private */,
+      14,    0,  111,    2, 0x08 /* Private */,
+      15,    1,  112,    2, 0x08 /* Private */,
+      17,    1,  115,    2, 0x08 /* Private */,
       18,    0,  118,    2, 0x08 /* Private */,
       19,    0,  119,    2, 0x08 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
@@ -115,11 +122,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Bool,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   13,
-    QMetaType::Void, QMetaType::Int,   13,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   16,
+    QMetaType::Void, QMetaType::Int,   16,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -132,25 +136,48 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_next_clicked(); break;
-        case 1: _t->on_pushButton_back_clicked(); break;
-        case 2: _t->on_pushButton_next_2_clicked(); break;
-        case 3: _t->on_pushButton_yes_clicked(); break;
-        case 4: _t->on_pushButton_no_clicked(); break;
-        case 5: _t->on_pushButton_2_clicked(); break;
-        case 6: _t->on_pushButton_3_clicked(); break;
-        case 7: { bool _r = _t->connectDatabase1();
+        case 0: _t->on_pushButton_autoriz_clicked(); break;
+        case 1: _t->on_pushButton_registr_clicked(); break;
+        case 2: _t->on_pushButton_registr_2_clicked(); break;
+        case 3: _t->on_pushButton_next_clicked(); break;
+        case 4: _t->on_pushButton_back_clicked(); break;
+        case 5: _t->on_pushButton_next_2_clicked(); break;
+        case 6: _t->on_pushButton_yes_clicked(); break;
+        case 7: _t->on_pushButton_no_clicked(); break;
+        case 8: _t->on_pushButton_2_clicked(); break;
+        case 9: _t->on_pushButton_3_clicked(); break;
+        case 10: { bool _r = _t->connectDatabase1();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 8: _t->on_pushButton_conf_clicked(); break;
-        case 9: _t->on_pushButton_4_clicked(); break;
-        case 10: _t->on_comboBox_spec_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: _t->on_comboBox_spec_2_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 12: _t->on_pushButton_choose_clicked(); break;
-        case 13: _t->on_pushButton_registr_clicked(); break;
-        case 14: _t->on_pushButton_registr_2_clicked(); break;
-        case 15: _t->on_pushButton_add_photo_clicked(); break;
-        case 16: _t->on_pushButton_autoriz_clicked(); break;
+        case 11: _t->on_pushButton_conf_clicked(); break;
+        case 12: _t->on_pushButton_4_clicked(); break;
+        case 13: _t->on_comboBox_spec_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->on_comboBox_spec_2_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->on_pushButton_choose_clicked(); break;
+        case 16: _t->on_pushButton_add_photo_clicked(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (MainWindow::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::on_pushButton_autoriz_clicked)) {
+                *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::on_pushButton_registr_clicked)) {
+                *result = 1;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::on_pushButton_registr_2_clicked)) {
+                *result = 2;
+                return;
+            }
         }
     }
 }
@@ -193,6 +220,24 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 17;
     }
     return _id;
+}
+
+// SIGNAL 0
+void MainWindow::on_pushButton_autoriz_clicked()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void MainWindow::on_pushButton_registr_clicked()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void MainWindow::on_pushButton_registr_2_clicked()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

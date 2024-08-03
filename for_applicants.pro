@@ -16,21 +16,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/master.cpp \
+    src/bachelor.cpp \
+    src/general.cpp \
     src/add_file.cpp \
     src/main.cpp \
     src/mainwindow.cpp \
     src/authorization.cpp
 
 HEADERS += \
+    include/bachelor.h \
+    include/general.h \
     include/add_file.h \
     include/mainwindow.h \
-    include/authorization.h
+    include/authorization.h \
+    include/master.h
 
 FORMS += \
     ui/add_file.ui \
     ui/mainwindow.ui
 
-RESOURCES += res.qrc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

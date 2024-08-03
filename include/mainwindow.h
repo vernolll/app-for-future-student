@@ -3,24 +3,21 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
-#include <QPixmap>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDebug>
-#include <QSortFilterProxyModel>
-#include <QRegExp>
-#include <QFile>
-#include <QMessageBox>
-#include <QFileDialog>
-#include "add_file.h"
+#include "include/add_file.h"
 #include "include/authorization.h"
+#include "include/general.h"
+#include "include/bachelor.h"
+#include "include/master.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class Authorization;
+class General;
+class Bachelor;
+class Master;
 
 class MainWindow : public QMainWindow
 {
@@ -30,7 +27,29 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
+signals:
+
+    void on_pushButton_autoriz_clicked();
+
+    void on_pushButton_registr_clicked();
+
+    void on_pushButton_registr_2_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_add_photo_clicked();
+
+    void on_pushButton_conf_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_comboBox_spec_2_currentIndexChanged(int index);
+
+    void on_pushButton_choose_clicked();
+
+    void on_comboBox_spec_currentIndexChanged(int index);
+
+    void on_pushButton_4_clicked();
 
     void on_pushButton_next_clicked();
 
@@ -42,53 +61,15 @@ private slots:
 
     void on_pushButton_no_clicked();
 
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_3_clicked();
-
-    bool connectDatabase1();
-
-    void on_pushButton_conf_clicked();
-
-    void on_pushButton_4_clicked();
-
-    void on_comboBox_spec_currentIndexChanged(int index);
-
-    void on_comboBox_spec_2_currentIndexChanged(int index);
-
-    void on_pushButton_choose_clicked();
-
-    void on_pushButton_add_photo_clicked();
-
-signals:
-
-    void on_pushButton_autoriz_clicked();
-
-    void on_pushButton_registr_clicked();
-
-    void on_pushButton_registr_2_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QSqlDatabase db1;
-    QSqlDatabase db2;
-    QSqlQuery *query;
-    QSqlQuery *query1;
-    QSqlQuery *query2;
-    QSqlQuery *query3;
-    QSqlQuery *query4;
-    QSortFilterProxyModel *proxyModel;
-    add_file *window2;
-
-    int row;
-    bool choosed;
-    bool specialitet;
 
     QStackedWidget *stackedWidget;
     Authorization *authorization;
+    General *general;
+    Bachelor *bachelor;
+    Master *master;
 };
-
-//bool connectDatabase();
-bool connectDatabase1();
 
 #endif // MAINWINDOW_H

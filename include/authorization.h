@@ -9,7 +9,8 @@
 #include "include/mainwindow.h"
 #include "ui_mainwindow.h"
 
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 
@@ -19,24 +20,25 @@ class Authorization : public QObject
 
 public:
     explicit Authorization(Ui::MainWindow *ui, QObject *parent = nullptr);
+    ~Authorization();
 
 public slots:
 
-    void on_pushButton_autoriz_clicked();
+    void data_reconciliation();
 
-    void on_pushButton_registr_clicked();
+    void switching_to_registration();
 
-    void on_pushButton_registr_2_clicked();
+    void add_a_new_user();
+
+    bool connectDatabase();
+
+    bool isPasswordStrong(const QString &password);
 
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
     QSqlQuery *query;
 };
-
-
-bool connectDatabase();
-bool isPasswordStrong(const QString &password);
 
 
 #endif // AUTHORIZATION_H

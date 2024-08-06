@@ -9,8 +9,6 @@ Bachelor::Bachelor(Ui::MainWindow *ui, QObject *parent) :
 
 Bachelor::~Bachelor()
 {
-    delete query1;
-    delete query2;
     delete ui;
 }
 
@@ -156,8 +154,8 @@ void Bachelor::writing_to_a_file()
     QFile file("info.txt");
     if (!file.exists())
     {
-        qDebug() << "File not exist.";
-        return;
+        file.open(QIODevice::WriteOnly);
+        file.close();
     }
 
     if (file.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -169,6 +167,9 @@ void Bachelor::writing_to_a_file()
     }
 
     db1.close();
+
+    delete query1;
+    delete query2;
 
     ui->stackedWidget->setCurrentWidget(ui->page_7_data);
 }

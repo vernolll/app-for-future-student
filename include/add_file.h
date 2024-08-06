@@ -7,8 +7,13 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QDebug>
+#include "include/general.h"
 
-namespace Ui {
+class General;
+
+
+namespace Ui
+{
 class add_file;
 }
 
@@ -19,6 +24,7 @@ class add_file : public QDialog
 public:
     explicit add_file(QWidget *parent = nullptr);
     ~add_file();
+    void change_global_v();
 
 signals:
     void window2();

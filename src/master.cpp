@@ -10,7 +10,6 @@ Master::Master(Ui::MainWindow *ui, QObject *parent) :
 Master::~Master()
 {
     delete ui;
-    delete query2;
 }
 
 
@@ -91,6 +90,7 @@ void Master::writing_info_to_file()
         out << spec << "\n";
         out << prof << "\n";
         file.close();
+        delete query2;
     }
 
     db2.close();

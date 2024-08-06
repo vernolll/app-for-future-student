@@ -6,11 +6,20 @@ add_file::add_file(QWidget *parent) :
     ui(new Ui::add_file)
 {
     ui->setupUi(this);
+
 }
+
+bool is_add = false;
 
 add_file::~add_file()
 {
     delete ui;
+}
+
+
+void add_file::change_global_v()
+{
+    is_add = true;
 }
 
 
@@ -24,6 +33,8 @@ void add_file::on_pushButton_add_clicked()
         ui->image_label->setPixmap(pixmap.scaled(400, 300, Qt::KeepAspectRatio));
     }
 }
+
+
 
 void add_file::on_pushButton_confirm_clicked()
 {
@@ -44,6 +55,7 @@ void add_file::on_pushButton_confirm_clicked()
         if (file.open(QIODevice::Append | QIODevice::Text)) {
             QTextStream out(&file);
             out << destFileName << "\n";
+            change_global_v();
             file.close();
         }
         this->close();

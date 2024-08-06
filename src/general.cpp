@@ -10,6 +10,9 @@ General::General(Ui::MainWindow *ui, QObject *parent) :
 }
 
 
+extern bool is_add;
+
+
 General::~General()
 {
     delete ui;
@@ -20,7 +23,6 @@ General::~General()
 
 void General::choosing_degree()
 {
-    qDebug() << "HHH";
     bool specialitet = false;
     if (ui->radioButton_bachelor->isChecked())
     {
@@ -30,14 +32,12 @@ void General::choosing_degree()
     else if(ui->radioButton_spec->isChecked())
     {
        specialitet = true;
-       qDebug() << "spec";
        bachelor->connectDatabase(specialitet);
        ui->stackedWidget->setCurrentWidget(ui->page_6_bach_spec);
 
     }
     else if(ui->radioButton_master->isChecked())
     {
-        qDebug() << "maga";
         master->connectDatabase();
         ui->stackedWidget->setCurrentWidget(ui->page_8_master);
 
@@ -63,8 +63,8 @@ void General::write_info_to_file()
     QFile file("info.txt");
 
     if (!file.exists()) {
-        qDebug() << "File does not exist.";
-        return;
+        file.open(QIODevice::WriteOnly);
+        file.close();
     }
 
     if (file.open(QIODevice::Append | QIODevice::Text)) {
@@ -81,7 +81,7 @@ void General::write_info_to_file()
     {
         qDebug() << "Failed to open the file for writing.";
     }
-    if (name!=NULL && sername != NULL && otche != NULL && phone != NULL && passport != NULL)
+    if (name!=NULL && sername != NULL && otche != NULL && phone != NULL && passport != NULL && is_add)
     {
         QMessageBox::information(nullptr, "Успех!", "Вы успешно подали заявление на поступление.");
         QCoreApplication::quit();

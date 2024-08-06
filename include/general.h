@@ -22,6 +22,7 @@ class MainWindow;
 
 class Bachelor;
 class Master;
+class add_file;
 
 
 // This class stores methods that are common to everything
@@ -32,6 +33,7 @@ class General : public QObject
 public:
      explicit General(Ui::MainWindow *ui, QObject *parent = nullptr);
     ~General();
+
 
 public slots:
     void choosing_degree();
@@ -55,6 +57,7 @@ private:
     add_file *window2;
     Bachelor *bachelor;
     Master *master;
+    QString name, sername, otche, passport, phone;
 
 };
 
